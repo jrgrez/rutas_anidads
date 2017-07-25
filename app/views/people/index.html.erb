@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>People</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.name %></td>
+        <td><%= person.group.name %></td>
+        <td><%= link_to 'Notas', group_person_notes_path(@group, person) %></td>
+        <td><%= link_to 'Show', group_person_path(@group, person) %></td>
+        <td><%= link_to 'Edit', edit_group_person_path(@group, person) %></td>
+        <td><%= link_to 'Destroy', group_person_path(@group, person), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Person', new_group_person_path %>

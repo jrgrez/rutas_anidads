@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @note.content %>
+</p>
+
+<p>
+  <strong>Person:</strong>
+  <%= @note.person.name %>
+</p>
+
+<%= link_to 'Edit', edit_group_person_note_path(@group, @person, @note) %> |
+<%= link_to 'Back',  group_person_notes_path(@group, @person) %>
