@@ -4,8 +4,8 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
     @person = Person.find(params[:person_id])
+    @notes = @person.notes
     @group = Group.find(params[:group_id])
   end
 

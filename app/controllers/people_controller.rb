@@ -4,8 +4,8 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.all
     @group = Group.find(params[:group_id])
+    @people = @group.people
   end
 
   # GET /people/1
